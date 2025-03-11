@@ -6,4 +6,4 @@ metadata:
     app: ces
 spec:
   name: official/smeagol
-  version: 1.6.2-2
+  version: 1.7.6-2

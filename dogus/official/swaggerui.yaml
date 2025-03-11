@@ -6,4 +6,4 @@ metadata:
     app: ces
 spec:
   name: official/swaggerui
-  version: 4.9.0-1
+  version: 5.19.0-1

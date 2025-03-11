@@ -6,4 +6,4 @@ metadata:
     app: ces
 spec:
   name: official/gotenberg
-  version: 7.5.2-1
+  version: 8.15.3-2

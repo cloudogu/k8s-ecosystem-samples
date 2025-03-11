@@ -6,4 +6,4 @@ metadata:
     app: ces
 spec:
   name: official/sonar
-  version: 9.9.7-1
+  version: 25.1.0-1

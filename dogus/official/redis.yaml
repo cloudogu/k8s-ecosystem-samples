@@ -6,4 +6,4 @@ metadata:
     app: ces
 spec:
   name: official/redis
-  version: 6.2.6-2
+  version: 6.2.17-2

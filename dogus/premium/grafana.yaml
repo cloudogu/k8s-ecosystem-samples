@@ -6,4 +6,4 @@ metadata:
     app: ces
 spec:
   name: premium/grafana
-  version: 11.1.5-3
+  version: 11.5.2-1

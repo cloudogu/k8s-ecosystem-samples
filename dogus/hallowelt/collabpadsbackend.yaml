@@ -1,9 +1,9 @@
 apiVersion: k8s.cloudogu.com/v2
 kind: Dogu
 metadata:
-  name: bluespice-pdfrenderer
+  name: bluespice-collabpadsbackend
   labels:
     app: ces
 spec:
-  name: hallowelt/bluespice-pdfrenderer
+  name: hallowelt/bluespice-collabpadsbackend
   version: 4.5.4-1

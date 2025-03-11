@@ -6,6 +6,6 @@ metadata:
     app: ces
 spec:
   name: official/postfix
-  version: 3.9.0-3
+  version: 3.9.0-4
   resources:
     dataVolumeSize: "4Gi"

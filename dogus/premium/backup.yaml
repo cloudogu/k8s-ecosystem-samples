@@ -6,4 +6,4 @@ metadata:
     app: ces
 spec:
   name: premium/backup
-  version: 1.9.2-2
+  version: 1.12.1-3
