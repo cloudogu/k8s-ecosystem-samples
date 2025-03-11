@@ -1,0 +1,7 @@
+apiVersion: k8s.cloudogu.com/v1
+kind: BackupSchedule
+metadata:
+  name: backupschedule-sample
+spec:
+  schedule: "20 11 * * *" # Every day at 11:20 a.m.
+  provider: "velero"
