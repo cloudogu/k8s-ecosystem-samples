@@ -1,0 +1,63 @@
+# See format specification here: https://github.com/cloudogu/k8s-blueprint-operator/blob/develop/docs/operations/blueprintV2_format_en.md
+apiVersion: k8s.cloudogu.com/v1
+kind: Blueprint
+metadata:
+  labels:
+    app.kubernetes.io/name: blueprint
+    app.kubernetes.io/instance: blueprint-sample
+    app.kubernetes.io/part-of: k8s-blueprint-operator
+    app.kubernetes.io/created-by: k8s-blueprint-operator
+  name: blueprint-sample-dry-run
+spec:
+  blueprint: |
+    {
+      "blueprintApi": "v2",
+      "dogus": [ // all dogus as an array
+        {
+          "name": "official/postgresql",
+          "version": "14.17-1",
+          "targetState": "present" // "absent" would uninstall a dogu
+          // more config could be set here, see dogutest/blueprint_add_dogu_config.yaml
+        }
+      ],
+      "components": [ // all components as an array
+        {
+          "name":"k8s/k8s-dogu-operator",
+          "version":"3.2.1",
+          "targetState":"present"
+          // more config could be set here, see componenttest/blueprint_add_component_config.yaml
+        }
+      ],
+      "config": {
+        "global": {
+          "present": { // config can be set and unset aswell
+            "global_key1": "global_value1",
+            "global_key2": "global_value2"
+          }
+        },
+        "dogus": {
+          "postgresql": {
+            "config": {
+              "present": {
+                "key1/path/test": "value1",
+                "key2": "value2"
+              }
+            },
+            "sensitiveConfig": { // sensitive config will be saved in secrets
+              "present": {
+                "key1_crypt": "value1",
+                "key2_crypt": "value2"
+              }
+            }
+          },
+        }
+      }
+    }
+  blueprintMask: |
+    // blueprint masks provide a way to override the blueprint. 
+    // This is helpful when there is a general blueprint that is only changed by the mask.
+    {"blueprintMaskApi":"v1"}
+  ignoreDoguHealth: false # IgnoreDoguHealth forces blueprint upgrades even if dogus are unhealthy
+  ignoreComponentHealth: false # IgnoreDoguHealth forces blueprint upgrades even if components are unhealthy
+  allowDoguNamespaceSwitch: false # AllowDoguNamespaceSwitch allows the blueprint upgrade to switch a dogus namespace
+  dryRun: false # DryRun lets the user test a blueprint run to check if all attributes of the blueprint are correct and avoid a result with a failure state.

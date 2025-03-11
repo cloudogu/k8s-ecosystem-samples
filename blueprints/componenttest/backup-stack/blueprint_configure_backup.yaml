@@ -1,0 +1,140 @@
+apiVersion: k8s.cloudogu.com/v1
+kind: Blueprint
+metadata:
+  labels:
+    app.kubernetes.io/name: blueprint
+    app.kubernetes.io/instance: blueprint-sample
+    app.kubernetes.io/part-of: k8s-blueprint-operator
+    app.kubernetes.io/created-by: k8s-blueprint-operator
+  name: blueprint-add-backup-configuration
+spec:
+  blueprint: |
+    {
+    "blueprintApi":"v2",
+    "components": [
+      {
+        "name":"k8s/k8s-dogu-operator",
+        "version":"3.2.1",
+        "targetState":"present"
+      },
+      {
+        "name":"k8s/k8s-dogu-operator-crd",
+        "version":"2.3.0",
+        "targetState":"present"
+      },
+      {
+        "name":"k8s/k8s-component-operator",
+        "version":"1.7.0",
+        "targetState":"present"
+      },
+      {
+        "name":"k8s/k8s-component-operator-crd",
+        "version":"1.7.0",
+        "targetState":"present"
+      },
+      {
+        "name":"k8s/k8s-longhorn",
+        "targetState":"present",
+        "version":"1.5.1-9",
+        "deployConfig":{
+          "deployNamespace":"longhorn-system",
+          "overwriteConfig":{
+            "longhorn":{
+              "defaultSettings":{
+                "backupTarget":"s3://longhorn@dummyregion/",
+                "backupTargetCredentialSecret":"longhorn-backup-target"
+              }
+            }
+          }
+        }
+      },
+      {
+        "name":"k8s/k8s-service-discovery",
+        "targetState":"present",
+        "version":"1.3.4"
+      },
+      {
+        "name":"k8s/k8s-minio",
+        "targetState":"absent"
+      },
+      {
+        "name":"k8s/k8s-ces-control",
+        "targetState":"absent"
+      },
+      {
+        "name":"k8s/k8s-loki",
+        "targetState":"absent"
+      },
+      {
+        "name":"k8s/k8s-prometheus",
+        "targetState":"absent"
+      },
+      {
+        "name":"k8s/k8s-snapshot-controller-crd",
+        "targetState":"present",
+        "version":"5.0.1-8"
+      },
+      {
+        "name":"k8s/k8s-snapshot-controller",
+        "targetState":"present",
+        "version":"5.0.1-8"
+      },
+      {
+        "name":"k8s/k8s-cert-manager",
+        "targetState":"absent"
+      },
+      {
+        "name":"k8s/k8s-cert-manager-crd",
+        "targetState":"absent"
+      },
+      {
+        "name":"k8s/k8s-velero",
+        "targetState":"present",
+        "version":"5.0.2-9",
+        "deployConfig":{
+          "overwriteConfig":{
+            "velero": {
+              "credentials": {
+                "useSecret": true,
+                "existingSecret": "velero-backup-target"
+              },
+              "configuration": {
+                "backupStorageLocation": [
+                  {
+                    "name": "default",
+                    "provider": "aws",
+                    "bucket": "velero",
+                    "accessMode": "ReadWrite",
+                    "config": {
+                      "region": "minio-default",
+                      "s3ForcePathStyle": true,
+                      "s3Url": "http://192.168.56.1:9000",
+                      "publicUrl": "http://localhost:9000"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      {
+        "name":"k8s/k8s-backup-operator",
+        "targetState":"present",
+        "version":"1.3.1"
+      },
+      {
+        "name":"k8s/k8s-backup-operator-crd",
+        "targetState":"present",
+        "version":"1.3.1"
+      },
+      {
+        "name":"k8s/k8s-promtail",
+        "targetState":"absent"
+      }
+    ]
+    }
+  blueprintMask: |
+    {"blueprintMaskApi":"v1"}
+  ignoreDoguHealth: false
+  allowDoguNamespaceSwitch: false

@@ -1,0 +1,35 @@
+apiVersion: k8s.cloudogu.com/v1
+kind: Blueprint
+metadata:
+  labels:
+    app.kubernetes.io/name: blueprint
+    app.kubernetes.io/instance: blueprint-sample
+    app.kubernetes.io/part-of: k8s-blueprint-operator
+    app.kubernetes.io/created-by: k8s-blueprint-operator
+  name: blueprint-postgres-12-15-1-testing
+spec:
+  blueprint: |
+    {
+      "blueprintApi":"v2",
+      "dogus":[
+        {
+          "name":"official/postgresql",
+          "version":"14.17-1",
+          "targetState":"present",
+          "platformConfig": {
+            "resource": {
+              "volumeSize": "2Gi"
+            },
+            "reserveProxy": {
+              "body-size": "1024m",
+              "rewriteTarget": "/",
+              "additionalConfig": "proxy_set_header Accept-Encoding \"identity\";\nrewrite ^(/portainer)$ $1/ redirect;"
+            }
+          }
+        }
+      ]
+    }
+  blueprintMask: |
+    {"blueprintMaskApi":"v1"}
+  ignoreDoguHealth: false
+  allowDoguNamespaceSwitch: false

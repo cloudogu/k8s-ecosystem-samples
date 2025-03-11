@@ -1,0 +1,83 @@
+apiVersion: k8s.cloudogu.com/v1
+kind: Blueprint
+metadata:
+  labels:
+    app.kubernetes.io/name: blueprint
+    app.kubernetes.io/instance: blueprint-sample
+    app.kubernetes.io/part-of: k8s-blueprint-operator
+    app.kubernetes.io/created-by: k8s-blueprint-operator
+  name: blueprint-remove-config
+spec:
+  blueprint: |
+    {
+      "blueprintApi":"v2",
+      "dogus": [
+        {
+          "name":"official/postgresql",
+          "version":"14.17-1",
+          "targetState":"present"
+        },
+        {
+          "name":"official/cas",
+          "version":"7.0.8-11",
+          "targetState":"present"
+        },
+        {
+          "name":"official/postfix",
+          "version":"3.9.0-4",
+          "targetState":"present"
+        },
+        {
+          "name":"k8s/nginx-ingress",
+          "version":"1.11.1-4",
+          "targetState":"present"
+        },
+        {
+          "name":"k8s/nginx-static",
+          "version":"1.26.3-1",
+          "targetState":"present"
+        }
+      ],
+      "config": {
+        "global": {
+          "present": {
+            "global_key1": "global_value1"
+          },
+          "absent": ["global_key2"]
+        },
+        "dogus": {
+          "postgresql": {
+            "config": {
+              "present": {
+                "key2": "value2"
+              },
+              "absent": ["key1/path/test"]
+            },
+            "sensitiveConfig": {
+              "present": {
+                "key1_crypt": "value1"
+              },
+              "absent": ["key2_crypt"]
+            }
+          },
+          "cas": {
+            "config": {
+              "present": {
+                "key1": "value1"
+              },
+              "absent": ["key2"]
+            },
+            "sensitiveConfig": {
+              "present": {
+                "key1_crypt": "value1"
+              },
+              "absent": ["key2_crypt"]
+            }
+          }
+        }
+      }
+    }
+  blueprintMask: |
+    {"blueprintMaskApi":"v1"}
+  ignoreDoguHealth: false
+  allowDoguNamespaceSwitch: false

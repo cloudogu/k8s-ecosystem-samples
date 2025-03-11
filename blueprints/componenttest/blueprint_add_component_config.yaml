@@ -1,0 +1,37 @@
+apiVersion: k8s.cloudogu.com/v1
+kind: Blueprint
+metadata:
+  labels:
+    app.kubernetes.io/name: blueprint
+    app.kubernetes.io/instance: blueprint-sample
+    app.kubernetes.io/part-of: k8s-blueprint-operator
+    app.kubernetes.io/created-by: k8s-blueprint-operator
+  name: blueprint-add-component-config-on-install
+spec:
+  blueprint: |
+    {
+    "blueprintApi":"v2",
+    "components": [
+      {
+        "name":"k8s/k8s-promtail",
+        "version":"2.9.1-7",
+        "targetState":"present",
+        "deployConfig":{
+          "overwriteConfig":{
+            "promtail":{
+              "deployment":{
+                "enabled": true
+              },
+              "daemonset":{
+                "enabled": false
+              }
+            }
+          }
+        }
+      }
+    ]
+    }
+  blueprintMask: |
+    {"blueprintMaskApi":"v1"}
+  ignoreDoguHealth: false
+  allowDoguNamespaceSwitch: false

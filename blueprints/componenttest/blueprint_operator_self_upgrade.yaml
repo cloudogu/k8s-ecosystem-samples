@@ -1,0 +1,22 @@
+apiVersion: k8s.cloudogu.com/v1
+kind: Blueprint
+metadata:
+  labels:
+    app.kubernetes.io/name: blueprint
+    app.kubernetes.io/instance: blueprint-sample
+    app.kubernetes.io/part-of: k8s-blueprint-operator
+    app.kubernetes.io/created-by: k8s-blueprint-operator
+  name: blueprint-operator-self-upgrade
+spec:
+  blueprint: |
+    {
+    "blueprintApi":"v2",
+    "components": [
+      {
+        "name":"k8s/k8s-blueprint-operator",
+        "version":"2.3.1",
+        "targetState":"present"
+      }
+    ]}
+  blueprintMask: |
+    {"blueprintMaskApi":"v1"}
