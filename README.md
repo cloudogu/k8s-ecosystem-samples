@@ -2,9 +2,32 @@
 
 A collection of commonly used k8s resources around MN-CES.
 
+## How-to
+
+if not stated otherwise (f.e. dogurestarts), these resources can be applied with the following command:
+
+```bash
+kubectl apply -f <RESOURCE_FILE> -n ecosystem
+```
+
+Changes to those resources will be noticed by our operators and handled accordingly. This can be achieved with another 
+`kubectl apply` or the resource is changed directly like this:
+
+```bash
+kubectl edit <RESOURCE> <RESOURCE_NAME> -n ecosystem
+```
+
+Where RESOURCE means the kind, f.e. "dogu" or "component" and RESOURCE_NAME means the specific name, f.e. 
+"bluespice" or "k8s-dogu-operator".
+
+### Generic Resource Examples
+
+Where helpful, this repository provides generic resource examples with explanatory comments. These are located in the 
+root of each resource folder and are named like the resource itself, f.e. [k8s_v2_dogu.yaml](dogus/k8s_v2_dogu.yaml).
+
 ## automation scripts
 
-This repository also contains some automation scripts for easier handling of MN-CES. For further information see 
+This repository also contains some automation scripts for easier handling of MN-CES. For further information, see 
 [here](scripts/README.md).
 
 ---
