@@ -5,6 +5,8 @@ These scripts call https://registry.cloudogu.com or https://dogu.cloudogu.com to
 copy the `.env.template`-file and rename it to `.env`. This file will be ignored by git. Fill the newly created `.env`-file
 with your login data, with teh passwords base64-encoded.
 
+Tip: Put the scripts-directory on your path to be able to call them from anywhere.
+
 ## Usage
 
 ### getAllDoguVersions

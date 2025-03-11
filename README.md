@@ -2,6 +2,11 @@
 
 A collection of commonly used k8s resources around MN-CES.
 
+## automation scripts
+
+This repository also contains some automation scripts for easier handling of MN-CES. For further information see 
+[here](scripts/README.md).
+
 ---
 
 ## What is the Cloudogu EcoSystem?
