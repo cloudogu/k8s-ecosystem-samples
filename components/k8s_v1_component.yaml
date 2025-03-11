@@ -1,0 +1,14 @@
+# See format specification here: https://github.com/cloudogu/k8s-component-operator/blob/develop/docs/operations/managing_components_en.md#install-or-upgrade-components
+apiVersion: k8s.cloudogu.com/v1
+kind: Component
+metadata:
+  name: k8s-longhorn
+spec:
+  name: k8s-longhorn
+  namespace: k8s
+  version: 1.5.1-9
+  deployNamespace: longhorn-system # (optional) The k8s-namespace, where all resources of the component should be deployed. If this is empty the namespace of the component-operator will be used.
+  valuesYamlOverwrite: | # (optional) Helm-Values to overwrite configurations of the default values.yaml file. Should be written as a multiline-yaml string for readability.
+    longhorn:
+      defaultSettings:
+        backupTargetCredentialSecret: my-longhorn-backup-target
