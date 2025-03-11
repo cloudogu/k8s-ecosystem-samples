@@ -1,0 +1,8 @@
+apiVersion: k8s.cloudogu.com/v1
+kind: Component
+metadata:
+  name: k8s-promtail
+spec:
+  name: k8s-promtail
+  namespace: k8s
+  version: 2.9.1-7

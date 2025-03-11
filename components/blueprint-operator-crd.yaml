@@ -1,0 +1,11 @@
+apiVersion: k8s.cloudogu.com/v1
+kind: Component
+metadata:
+  name: k8s-blueprint-operator-crd
+  labels:
+    app: ces
+    app.kubernetes.io/name: k8s-blueprint-operator-crd
+spec:
+  name: k8s-blueprint-operator-crd
+  namespace: k8s
+  version: 1.1.0

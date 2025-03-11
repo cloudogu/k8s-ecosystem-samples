@@ -1,0 +1,11 @@
+apiVersion: k8s.cloudogu.com/v1
+kind: Component
+metadata:
+  name: k8s-snapshot-controller
+  labels:
+    app: ces
+    app.kubernetes.io/name: k8s-snapshot-controller
+spec:
+  name: k8s-snapshot-controller
+  namespace: k8s
+  version: 5.0.1-8

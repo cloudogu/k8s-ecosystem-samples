@@ -1,0 +1,11 @@
+apiVersion: k8s.cloudogu.com/v1
+kind: Component
+metadata:
+  name: k8s-component-operator
+  labels:
+    app: ces
+    app.kubernetes.io/name: k8s-component-operator
+spec:
+  name: k8s-component-operator
+  namespace: k8s
+  version: 1.7.0

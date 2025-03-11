@@ -1,0 +1,8 @@
+apiVersion: k8s.cloudogu.com/v1
+kind: Component
+metadata:
+  name: k8s-ces-control
+spec:
+  name: k8s-ces-control
+  namespace: k8s
+  version: 1.3.0

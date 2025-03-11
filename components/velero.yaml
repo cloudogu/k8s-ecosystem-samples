@@ -1,0 +1,15 @@
+apiVersion: k8s.cloudogu.com/v1
+kind: Component
+metadata:
+  name: k8s-velero
+  labels:
+    app: ces
+    app.kubernetes.io/name: k8s-velero
+spec:
+  name: k8s-velero
+  namespace: k8s
+  version: 5.0.2-9
+  valuesYamlOverwrite: |
+    velero:
+      credentials:
+        existingSecret: velero-bsl

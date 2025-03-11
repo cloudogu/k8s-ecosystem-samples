@@ -1,0 +1,8 @@
+apiVersion: k8s.cloudogu.com/v1
+kind: Component
+metadata:
+  name: k8s-cert-manager
+spec:
+  name: k8s-cert-manager
+  namespace: k8s
+  version: 1.13.1-4

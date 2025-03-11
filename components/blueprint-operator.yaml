@@ -1,0 +1,11 @@
+apiVersion: k8s.cloudogu.com/v1
+kind: Component
+metadata:
+  name: k8s-blueprint-operator
+  labels:
+    app: ces
+    app.kubernetes.io/name: k8s-blueprint-operator
+spec:
+  name: k8s-blueprint-operator
+  namespace: k8s
+  version: 2.3.0

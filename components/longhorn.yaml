@@ -1,0 +1,9 @@
+apiVersion: k8s.cloudogu.com/v1
+kind: Component
+metadata:
+  name: k8s-longhorn
+spec:
+  name: k8s-longhorn
+  deployNamespace: longhorn-system
+  namespace: k8s
+  version: 1.5.1-9
