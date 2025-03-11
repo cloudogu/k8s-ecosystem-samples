@@ -1,0 +1,12 @@
+apiVersion: k8s.cloudogu.com/v2
+kind: Dogu
+metadata:
+  name: postfix # <DOGU_NAME>
+spec:
+  name: official/postfix # <NAMESPACE>/<DOGU_NAME>
+  version: 1.2.3-4 # Dogu-Version
+  supportMode: false # Replace dogu start with infinite sleep for debugging purposes
+  resources:
+    dataVolumeSize: 2Gi # Set or resize volume size
+  additionalIngressAnnotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: "0" # see https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/
