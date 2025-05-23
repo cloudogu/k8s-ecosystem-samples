@@ -4,7 +4,7 @@ metadata:
   labels:
     app.kubernetes.io/name: blueprint
     app.kubernetes.io/instance: cloudogu-blueprint
-  name: "ecosystem.cloudogu.com 2025-03-07"
+  name: "ecosystem.cloudogu.com2025-04-22"
 spec:
   blueprint: |
     {
