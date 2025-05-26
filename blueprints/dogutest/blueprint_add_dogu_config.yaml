@@ -4,7 +4,7 @@ metadata:
   labels:
     app.kubernetes.io/name: blueprint
     app.kubernetes.io/instance: blueprint-sample
-  name: blueprint-postgres-12-15-1-testing
+  name: blueprint-postgres-testing
 spec:
   blueprint: |
     {
@@ -16,12 +16,7 @@ spec:
           "targetState":"present",
           "platformConfig": {
             "resource": {
-              "volumeSize": "2Gi"
-            },
-            "reserveProxy": {
-              "body-size": "1024m",
-              "rewriteTarget": "/",
-              "additionalConfig": "proxy_set_header Accept-Encoding \"identity\";\nrewrite ^(/portainer)$ $1/ redirect;"
+              "minVolumeSize": "1Gi"
             }
           }
         }
