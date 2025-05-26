@@ -8,4 +8,4 @@ spec:
   name: official/postgresql
   version: 14.17-1
   resources:
-    dataVolumeSize: "1Gi"
+    minDataVolumeSize: "1Gi"
