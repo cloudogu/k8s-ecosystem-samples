@@ -8,6 +8,6 @@ spec:
   name: official/nexus
   version: 3.75.0-3
   resources:
-    dataVolumeSize: 5Gi
+    minDataVolumeSize: 5Gi
   additionalIngressAnnotations:
     nginx.ingress.kubernetes.io/proxy-body-size: "0"

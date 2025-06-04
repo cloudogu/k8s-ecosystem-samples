@@ -5,8 +5,6 @@ metadata:
   labels:
     app.kubernetes.io/name: blueprint
     app.kubernetes.io/instance: blueprint-sample
-    app.kubernetes.io/part-of: k8s-blueprint-operator
-    app.kubernetes.io/created-by: k8s-blueprint-operator
   name: blueprint-sample-dry-run
 spec:
   blueprint: |

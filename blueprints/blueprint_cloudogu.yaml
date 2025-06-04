@@ -4,8 +4,6 @@ metadata:
   labels:
     app.kubernetes.io/name: blueprint
     app.kubernetes.io/instance: cloudogu-blueprint
-    app.kubernetes.io/part-of: k8s-blueprint-operator
-    app.kubernetes.io/created-by: k8s-blueprint-operator
   name: "ecosystem.cloudogu.com2025-04-22"
 spec:
   blueprint: |

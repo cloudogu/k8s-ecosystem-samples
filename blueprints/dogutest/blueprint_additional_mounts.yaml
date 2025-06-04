@@ -1,0 +1,57 @@
+apiVersion: k8s.cloudogu.com/v1
+kind: Blueprint
+metadata:
+  labels:
+    app.kubernetes.io/name: blueprint
+    app.kubernetes.io/instance: blueprint-sample
+  name: additional-mounts-test
+spec:
+  # should mount the configmap (see below) in nginx-static
+  # you can open the file under <FQDN>/static/test/test.html
+  blueprint: |
+    {
+      "blueprintApi":"v2",
+      "dogus":[
+        {
+          "name":"k8s/nginx-ingress",
+          "version":"1.12.1-2",
+          "targetState":"present"
+        },
+        {
+          "name":"k8s/nginx-static",
+          "version":"1.26.3-2",
+          "targetState":"present",
+          "platformConfig": {
+            "additionalMounts": [
+              {
+                "sourceType": "ConfigMap",
+                "name": "html-config",
+                "volume": "customhtml",
+                "subfolder": "test"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  blueprintMask: |
+    {"blueprintMaskApi":"v1"}
+  ignoreDoguHealth: false
+  allowDoguNamespaceSwitch: false
+
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: html-config
+  labels:
+    app: ces
+data:
+  test.html: |
+    <html lang="en">
+        <body>
+            <h1>test for additional mounts</h1>
+            <p>If you can open this site, additional mounts are working</p>
+        </body>
+    </html>

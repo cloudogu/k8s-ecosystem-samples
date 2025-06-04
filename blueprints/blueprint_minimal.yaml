@@ -4,8 +4,6 @@ metadata:
   labels:
     app.kubernetes.io/name: blueprint
     app.kubernetes.io/instance: blueprint-sample
-    app.kubernetes.io/part-of: k8s-blueprint-operator
-    app.kubernetes.io/created-by: k8s-blueprint-operator
   name: blueprint-sample
 spec:
   blueprint: |
@@ -21,12 +19,12 @@ spec:
     "components": [
       {
         "name":"k8s/k8s-dogu-operator",
-        "version":"3.2.1",
+        "version":"3.5.0",
         "targetState":"present"
       }
     ]}
   blueprintMask: |
     {"blueprintMaskApi":"v1"}
-  ignoreDoguHealth: false
-  ignoreComponentHealth: false
+  ignoreDoguHealth: true
+  ignoreComponentHealth: true
   allowDoguNamespaceSwitch: false
