@@ -4,7 +4,7 @@ metadata:
   labels:
     app.kubernetes.io/name: blueprint
     app.kubernetes.io/instance: cloudogu-blueprint
-  name: "ecosystem.cloudogu.com2025-04-22"
+  name: "ecosystem.cloudogu.com2025-06-20"
 spec:
   blueprint: |
     {
@@ -52,7 +52,7 @@ spec:
       },
       {
         "name":"official/cas",
-        "version":"7.0.8-11",
+        "version":"7.1.6-3",
         "targetState":"present",
         "platformConfig": {
           "resource": {
@@ -80,16 +80,16 @@ spec:
           }
         }
       },
-      
+    
       {
         "name":"official/cockpit",
         "version":"2.3.0-3",
         "targetState":"present"
       },
-      
+    
       {
         "name":"official/ldap",
-        "version":"2.6.8-3",
+        "version":"2.6.8-4",
         "targetState":"present",
         "platformConfig": {
           "resource": {
@@ -104,7 +104,7 @@ spec:
       },
       {
         "name":"official/mysql",
-        "version":"8.4.4-1",
+        "version":"8.4.5-4",
         "targetState":"present",
         "platformConfig": {
           "resource": {
@@ -124,12 +124,12 @@ spec:
       },
       {
         "name":"k8s/nginx-ingress",
-        "version":"1.12.1-1",
+        "version":"1.12.1-2",
         "targetState":"present"
       },
       {
         "name":"k8s/nginx-static",
-        "version":"1.26.3-1",
+        "version":"1.26.3-2",
         "targetState":"present",
         "platformConfig": {
           "resource": {
@@ -144,7 +144,7 @@ spec:
       },
       {
         "name":"official/postfix",
-        "version":"3.9.3-2",
+        "version":"3.10.2-2",
         "targetState":"present"
       },
       {
@@ -249,22 +249,7 @@ spec:
           "exampleKey": "exampleValue"
         }
       },
-      "dogus": {
-        "ldap-mapper": {
-          "config": {
-            "present": {
-              "backend/type": "embedded",
-              "backend/host": "ldap",
-              "backend/port": "389"
-            }
-          },
-          "sensitiveConfig": {
-            "present": {
-              "exampleKey": "exampleValue"
-            }
-          }
-        }
-      }
+      "dogus": {}
     },
     "components": [
       {
@@ -280,12 +265,12 @@ spec:
       {
         "name":"k8s/k8s-blueprint-operator",
         "targetState":"present",
-        "version":"2.4.1"
+        "version":"2.6.0"
       },
       {
         "name":"k8s/k8s-blueprint-operator-crd",
         "targetState":"present",
-        "version":"2.4.1"
+        "version":"1.3.0"
       },
       {
         "name":"k8s/k8s-ces-control",
@@ -295,21 +280,21 @@ spec:
       {
         "name":"k8s/k8s-component-operator",
         "targetState":"present",
-        "version":"1.8.0"
+        "version":"1.9.0"
       },
       {
         "name":"k8s/k8s-component-operator-crd",
         "targetState":"present",
-        "version":"1.8.0"
+        "version":"1.9.0"
       },
       {
         "name":"k8s/k8s-dogu-operator",
-        "version":"3.5.0",
+        "version":"3.8.2",
         "targetState":"present"
       },
       {
         "name":"k8s/k8s-dogu-operator-crd",
-        "version":"3.5.0",
+        "version":"2.9.0",
         "targetState":"present"
       },
       {
@@ -335,7 +320,7 @@ spec:
       {
         "name":"k8s/k8s-service-discovery",
         "targetState":"present",
-        "version":"1.3.4"
+        "version":"2.0.0"
       },
       {
         "name":"k8s/k8s-snapshot-controller",
