@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: openproject-config
+  labels:
+    app: ces
+    dogu.name: openproject
+    k8s.cloudogu.com/type: dogu-config
+data:
+  config.yaml: |
+    enterprise_token: |
+      -----BEGIN OPENPROJECT-EE TOKEN-----
+      eyJ-multi-line-token-here-==
+      -----END OPENPROJECT-EE TOKEN-----
