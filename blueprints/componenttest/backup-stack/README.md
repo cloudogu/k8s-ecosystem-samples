@@ -11,8 +11,6 @@
   - Create buckets
     - `longhorn`
     - `velero`
-- Init EcoSystem
-  - `kubectl apply -f k8s_v1_blueprint_initial_system.yaml --namespace=ecosystem`
 - Apply backup stack with component configuration
   - `kubectl apply -f k8s_v1_blueprint_configure_backup.yaml --namespace=ecosystem`
 - Create a backup
