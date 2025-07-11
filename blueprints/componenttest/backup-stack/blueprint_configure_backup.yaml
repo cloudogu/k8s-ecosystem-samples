@@ -12,7 +12,7 @@ spec:
     "components": [
       {
         "name":"k8s/k8s-dogu-operator",
-        "version":"3.11.1",
+        "version":"3.11.2",
         "targetState":"present"
       },
       {
@@ -22,12 +22,12 @@ spec:
       },
       {
         "name":"k8s/k8s-component-operator",
-        "version":"1.9.0",
+        "version":"1.10.0",
         "targetState":"present"
       },
       {
         "name":"k8s/k8s-component-operator-crd",
-        "version":"1.9.0",
+        "version":"1.10.0",
         "targetState":"present"
       },
       {
@@ -38,7 +38,7 @@ spec:
           "deployNamespace":"longhorn-system",
           "overwriteConfig":{
             "longhorn":{
-              "defaultSettings":{
+              "defaultBackupStore":{
                 "backupTarget":"s3://longhorn@dummyregion/",
                 "backupTargetCredentialSecret":"longhorn-backup-target"
               }
