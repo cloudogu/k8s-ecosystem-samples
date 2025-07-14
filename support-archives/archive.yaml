@@ -1,0 +1,6 @@
+# use kubectl create -f support-archives/archive.yaml -n ecosystem instead of apply
+apiVersion: k8s.cloudogu.com/v1
+kind: SupportArchive
+metadata:
+  generateName: support-archive-sample-
+spec:
