@@ -8,4 +8,4 @@ metadata:
 spec:
   name: k8s-ces-gateway
   namespace: ecosystem
-  version: 0.0.1
+  version: 1.0.0
