@@ -1,0 +1,11 @@
+apiVersion: k8s.cloudogu.com/v1
+kind: Component
+metadata:
+  name: k8s-ces-assets
+  labels:
+    app: ces
+    app.kubernetes.io/name: k8s-ces-assets
+spec:
+  name: k8s-ces-assets
+  namespace: ecosystem
+  version: 1.0.0
