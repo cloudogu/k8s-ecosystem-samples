@@ -1,0 +1,129 @@
+apiVersion: k8s.cloudogu.com/v2
+kind: Blueprint
+metadata:
+  labels:
+    app.kubernetes.io/name: blueprint
+    app.kubernetes.io/instance: cloudogu-blueprint
+  name: "all-dogus-sample"
+spec:
+  displayName: "all-dogus-sample2025-08-25"
+  blueprint:
+    dogus:
+      - name: "hallowelt/bluespice"
+        version: "4.5.5-3"
+      - name: "hallowelt/bluespice-collabpadsbackend"
+        version: "4.5.4-1"
+      - name: "hallowelt/bluespice-mathoid"
+        version: "4.5.4-1"
+      - name: "hallowelt/bluespice-opensearch"
+        version: "2.17.1-4"
+      - name: "hallowelt/bluespice-pdfrenderer"
+        version: "4.5.4-1"
+      - name: "hallowelt/drawio"
+        version: "24.7.17-2"
+      - name: "hallowelt/mongodb"
+        version: "8.0.4-3"
+      - name: "itz-bund/teamscale"
+        version: "2025.3.0-3"
+      - name: "itz-bund/easyredmine"
+        version: "13.11.5-11"
+        absent: true
+      - name: "official/cas"
+        version: "7.2.6-3"
+      - name: "official/gotenberg"
+        version: "8.21.1-2"
+      - name: "official/jenkins"
+        version: "2.516.1-1"
+        platformConfig:
+          resource:
+            minVolumeSize: "10Gi"
+          reverseProxy:
+            maxBodySize: "0"
+      - name: "official/cockpit"
+        version: "2.3.0-4"
+      - name: "official/ldap"
+        version: "2.6.8-4"
+      - name: "official/ldap-mapper"
+        version: "1.6.2-1"
+        absent: true
+      - name: "official/mysql"
+        version: "8.4.5-4"
+        platformConfig:
+          resource:
+            minVolumeSize: "1Gi"
+      - name: "official/nexus"
+        version: "3.75.0-6"
+        platformConfig:
+          resource:
+            minVolumeSize: "20Gi"
+      - name: "official/plantuml"
+        version: "2025.4-1"
+      - name: "official/postfix"
+        version: "3.10.4-1"
+      - name: "official/postgresql"
+        version: "14.18-3"
+        platformConfig:
+          resource:
+            minVolumeSize: "1Gi"
+      - name: "official/redis"
+        version: "6.2.19-1"
+        platformConfig:
+          resource:
+            minVolumeSize: "1Gi"
+      - name: "official/redmine"
+        version: "5.1.8-3"
+        platformConfig:
+          resource:
+            minVolumeSize: "3Gi"
+      - name: "official/scm"
+        version: "3.9.0-1"
+        platformConfig:
+          resource:
+            minVolumeSize: "3Gi"
+      - name: "official/smeagol"
+        version: "1.7.8-2"
+      - name: "official/sonar"
+        version: "25.1.0-5"
+        platformConfig:
+          resource:
+            minVolumeSize: "1Gi"
+      - name: "official/swaggerui"
+        version: "5.21.0-1"
+        platformConfig:
+          resource:
+            minVolumeSize: "1Gi"
+      - name: "official/usermgt"
+        version: "1.20.0-5"
+        platformConfig:
+          resource:
+            minVolumeSize: "1Gi"
+      - name: "premium/admin"
+        version: "2.13.2-2"
+        platformConfig:
+          resource:
+            minVolumeSize: "1Gi"
+      - name: "premium/grafana"
+        version: "11.5.2-2"
+      - name: "premium/portainer"
+        version: "2.27.9-1"
+      - name: "premium/whitelabeling"
+        version: "1.1.1-1"
+    config:
+      dogus:
+        jenkins:
+          - key: "container_config/memory_request"
+            value: "2000m"
+          - key: "container_config/memory_limit"
+            value: "2000m"
+          - key: "container_config/cpu_core_request"
+            value: "0.5"
+        "bluespice-collabpadsbackend":
+          - key: "container_config/memory_request"
+            value: "200m"
+          - key: "container_config/memory_limit"
+            value: "200m"
+          - key: "container_config/cpu_core_request"
+            value: "0.1"
+      global:
+        - key: "test/key"
+          value: "testValue"
