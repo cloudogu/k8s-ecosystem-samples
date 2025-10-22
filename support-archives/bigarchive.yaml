@@ -1,0 +1,16 @@
+# use kubectl create -f support-archives/archive.yaml -n ecosystem instead of apply
+apiVersion: k8s.cloudogu.com/v1
+kind: SupportArchive
+metadata:
+  generateName: support-archive-sample-
+spec:
+  contentTimeframe:
+    startTime: "2020-01-01T00:00:00Z" # use default contentTimeframe with empty metav1.Time
+    endTime: "2025-09-23T00:00:00Z"
+  excludedContents:
+    systemState: false
+    sensitiveData: false
+    events: false
+    logs: false
+    volumeInfo: false
+    systemInfo: false

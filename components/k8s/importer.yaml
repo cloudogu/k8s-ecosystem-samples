@@ -1,0 +1,21 @@
+apiVersion: k8s.cloudogu.com/v1
+kind: Component
+metadata:
+  labels:
+    app: ces
+    name: ces-importer
+  namespace: ecosystem
+  name: ces-importer
+spec:
+  name: ces-importer
+  namespace: k8s
+  version: 1.2.3
+  valuesYamlOverwrite: |
+    config:
+      migration:
+        executePreflightCheck: false
+      api:
+        host: "fgdfgdfg"
+        skipTLSVerify: true
+      migration:
+        regularSchedule: "* 0 0 0 0"

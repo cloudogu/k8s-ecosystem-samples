@@ -5,4 +5,4 @@ metadata:
 spec:
   name: k8s-loki
   namespace: k8s
-  version: 3.3.2-1
+  version: 3.3.2-5

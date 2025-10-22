@@ -6,4 +6,4 @@ metadata:
     app: ces
 spec:
   name: premium/admin
-  version: 2.13.2-2
+  version: 2.15.1-1
