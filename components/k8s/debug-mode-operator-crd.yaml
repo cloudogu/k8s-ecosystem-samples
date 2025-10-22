@@ -1,7 +1,11 @@
 apiVersion: k8s.cloudogu.com/v1
-kind: DebugMode
+kind: Component
 metadata:
-  name: debug-mode
+  name: k8s-debug-mode-operator-crd
+  labels:
+    app: ces
+    app.kubernetes.io/name: k8s-debug-mode-operator-crd
 spec:
-  targetLogLevel: debug
-  deactivateTimestamp: 2025-08-07T16:31:01Z
+  name: k8s-debug-mode-operator-crd
+  namespace: k8s
+  version: 1.0.0

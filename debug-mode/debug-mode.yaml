@@ -1,0 +1,7 @@
+apiVersion: k8s.cloudogu.com/v1
+kind: DebugMode
+metadata:
+  name: debug-mode
+spec:
+  targetLogLevel: debug
+  deactivateTimestamp: 2025-10-23T16:31:01Z
