@@ -1,0 +1,17 @@
+apiVersion: k8s.cloudogu.com/v2
+kind: BlueprintMask
+metadata:
+  name: mask
+  namespace: ecosystem
+spec:
+  dogus:
+    - name: official/gotenberg
+      absent: true
+    - name: official/plantuml
+      absent: true
+    - name: official/cas
+      absent: false
+    - name: official/cockpit
+      absent: false
+
+

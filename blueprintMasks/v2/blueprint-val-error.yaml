@@ -1,0 +1,56 @@
+apiVersion: k8s.cloudogu.com/v2
+kind: Blueprint
+metadata:
+  name: blueprint-mask-val-error
+  namespace: ecosystem
+spec:
+  displayName: test
+  blueprintMaskRef:
+    name: mask
+  blueprintMask:
+    dogus:
+      - name: official/sonar
+        absent: true
+      - name: official/gotenberg
+        absent: true
+      - name: official/cas
+        absent: false
+      - name: official/cockpit
+        absent: false
+  blueprint:
+    dogus:
+      - name: official/cas
+        version: 7.2.7-2
+      - name: official/gotenberg
+        version: 8.15.3-1
+      - name: official/cockpit
+        version: 2.3.0-1
+      - name: official/ldap
+        version: 2.6.8-2
+      - name: official/mysql
+        version: 8.4.5-4
+      - name: official/plantuml
+        version: 2025.2-1
+      - name: official/postfix
+        version: 3.9.3-4
+      - name: official/postgresql
+        version: 14.17-4
+      - name: official/redmine
+        version: 5.1.6-1
+      - name: official/scm
+        version: 3.7.4-3
+      - name: official/smeagol
+        version: 1.7.8-1
+      - name: official/sonar
+        version: 9.9.8-3
+      - name: official/swaggerui
+        version: 5.18.2-1
+      - name: official/usermgt
+        version: 1.20.0-4
+      - name: premium/admin
+        version: 2.13.1-3
+      - name: premium/grafana
+        version: 11.5.2-1
+      - name: premium/whitelabeling
+        version: 1.1.1-1
+
