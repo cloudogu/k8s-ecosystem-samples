@@ -11,6 +11,9 @@ spec:
     dogus:
       - name: "hallowelt/bluespice"
         version: "4.5.5-3"
+        platformConfig:
+          reverseProxy:
+            maxBodySize: "1024m"
       - name: "hallowelt/bluespice-collabpadsbackend"
         version: "4.5.4-1"
       - name: "hallowelt/bluespice-mathoid"
@@ -38,7 +41,7 @@ spec:
           resource:
             minVolumeSize: "10Gi"
           reverseProxy:
-            maxBodySize: "0"
+            maxBodySize: "1024m"
       - name: "official/cockpit"
         version: "2.3.0-4"
       - name: "official/ldap"
@@ -56,6 +59,8 @@ spec:
         platformConfig:
           resource:
             minVolumeSize: "20Gi"
+          reverseProxy:
+            maxBodySize: "1024m"
       - name: "official/plantuml"
         version: "2025.4-1"
       - name: "official/postfix"
@@ -80,6 +85,8 @@ spec:
         platformConfig:
           resource:
             minVolumeSize: "3Gi"
+          reverseProxy:
+            maxBodySize: "10m"
       - name: "official/smeagol"
         version: "1.7.8-2"
       - name: "official/sonar"
@@ -87,6 +94,8 @@ spec:
         platformConfig:
           resource:
             minVolumeSize: "1Gi"
+          reverseProxy:
+            maxBodySize: "10m"
       - name: "official/swaggerui"
         version: "5.21.0-1"
         platformConfig:
@@ -117,6 +126,27 @@ spec:
             value: "2000m"
           - key: "container_config/cpu_core_request"
             value: "0.5"
+          - key: "container_config/java_max_ram_percentage"
+            value: "100.0"
+        nexus:
+          - key: "container_config/java_max_ram_percentage"
+            value: "100.0"
+        sonar:
+          - key: "container_config/java_max_ram_percentage"
+            value: "100.0"
+        smeagol:
+          - key: "container_config/java_max_ram_percentage"
+            value: "100.0"
+        usermgt:
+          - key: "container_config/java_max_ram_percentage"
+            value: "100.0"
+        scm:
+          - key: "container_config/java_max_ram_percentage"
+            value: "100.0"
+          - key: "container_config/memory_request"
+            value: "1000m"
+          - key: "container_config/memory_limit"
+            value: "1000m"
         "bluespice-collabpadsbackend":
           - key: "container_config/memory_request"
             value: "200m"
