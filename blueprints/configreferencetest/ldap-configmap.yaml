@@ -2,6 +2,9 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: ldap-configmap
+  labels:
+    app: ces
+    dogu.name: ldap
 data:
   # kv format
   logging: "WARN"
