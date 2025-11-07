@@ -6,4 +6,4 @@ metadata:
     app: ces
 spec:
   name: hallowelt/bluespice-opensearch
-  version: 2.19.2-2
+  version: 2.19.2-3

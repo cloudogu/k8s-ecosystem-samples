@@ -6,4 +6,4 @@ metadata:
     app: ces
 spec:
   name: hallowelt/bluespice-mathoid
-  version: 5.1-1
+  version: 5.1-2
