@@ -5,10 +5,10 @@ doguName=$2
 env="${3:-$envDefault}"
 cmName="${doguName}-config"
 fileName=${doguName}_config
+
 if [ "$env" = "local" ]; then
   fileName="${fileName}_local"
 fi
-echo "${fileName}"
 
 kubectl create cm "${cmName}" --from-file=config.yaml="${fileName}.yaml" -n "${namespace}"
 kubectl label configmap "${cmName}" app=ces -n "${namespace}"
