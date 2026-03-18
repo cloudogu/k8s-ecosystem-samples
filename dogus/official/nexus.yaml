@@ -9,5 +9,3 @@ spec:
   version: 3.75.0-3
   resources:
     minDataVolumeSize: 5Gi
-  additionalIngressAnnotations:
-    nginx.ingress.kubernetes.io/proxy-body-size: "0"
