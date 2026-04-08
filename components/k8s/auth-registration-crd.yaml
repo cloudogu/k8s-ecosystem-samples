@@ -1,0 +1,8 @@
+apiVersion: k8s.cloudogu.com/v1
+kind: Component
+metadata:
+  name: k8s-auth-registration-crd
+spec:
+  name: k8s-auth-registration-crd
+  namespace: k8s
+  version: 0.1.1
