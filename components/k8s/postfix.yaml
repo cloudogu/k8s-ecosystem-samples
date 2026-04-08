@@ -1,0 +1,8 @@
+apiVersion: k8s.cloudogu.com/v1
+kind: Component
+metadata:
+  name: postfix
+spec:
+  name: postfix
+  namespace: k8s
+  version: 3.10.8-2
