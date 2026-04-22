@@ -1,0 +1,22 @@
+apiVersion: k8s.cloudogu.com/v1
+kind: ServiceAccountProducer
+metadata:
+  name: shell-producer
+  namespace: ecosystem
+spec:
+  producer: "legacy-app"
+  exec:
+    command: "/create-sa.sh"
+    selector:
+      matchLabels:
+        app: sa-provisioner
+    priority: 1
+  params:
+    attributes:
+      role:
+        description: "Rollenbezeichnung"
+        type: "string"
+        order: 1
+  return:
+    token:
+      description: "API Token der Anwendung"

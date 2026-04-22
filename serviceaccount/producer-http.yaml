@@ -1,0 +1,34 @@
+apiVersion: k8s.cloudogu.com/v1
+kind: ServiceAccountProducer
+metadata:
+  name: nexus-producer
+  namespace: ecosystem
+spec:
+  producer: "nexus"
+  http:
+    endpoint: "http://nexus.svc.ecosystem.cluster.local/api/cloudogu/service-account"
+    authSecret:
+      name: nexus-credentials
+      key: "api-token"
+    priority: 1
+  params:
+    attributes:
+      fullAccessRepository:
+        description: "Name des zu berechtigenden Repositories"
+        type: "string"
+        order: 1
+      permissions:
+        description: "Art der Berechtigungen"
+        type: "string"
+        enum:
+          - "nx-repository-view-*-*-read"
+          - "nx-repository-view-*-*-browse"
+        order: 2
+    required:
+      - fullAccessRepository
+      - permissions
+  return:
+    username:
+      description: "Der generierte technische Nutzername"
+    password:
+      description: "Das Passwort für den Service Account"
