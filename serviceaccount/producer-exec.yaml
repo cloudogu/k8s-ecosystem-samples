@@ -11,12 +11,12 @@ spec:
       matchLabels:
         app: sa-provisioner
     priority: 1
-  params:
-    attributes:
-      role:
-        description: "Rollenbezeichnung"
-        type: "string"
-        order: 1
-  return:
-    token:
-      description: "API Token der Anwendung"
+    params:
+      attributes:
+        role:
+          description: "Rollenbezeichnung"
+          type: "string"
+          order: 1
+    return:
+      token:
+        description: "API Token der Anwendung"
