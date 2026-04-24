@@ -7,5 +7,5 @@ metadata:
     app.kubernetes.io/name: k8s-ces-gateway
 spec:
   name: k8s-ces-gateway
-  namespace: ecosystem
-  version: 1.0.0
+  namespace: k8s
+  version: 2.0.1

@@ -8,4 +8,4 @@ metadata:
 spec:
   name: k8s-snapshot-controller-crd
   namespace: k8s
-  version: 5.0.1-8
+  version: 8.2.1-2

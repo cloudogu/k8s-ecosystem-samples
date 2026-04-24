@@ -6,4 +6,4 @@ metadata:
     app: ces
 spec:
   name: premium/portainer
-  version: 2.21.4-4
+  version: 2.27.6-1

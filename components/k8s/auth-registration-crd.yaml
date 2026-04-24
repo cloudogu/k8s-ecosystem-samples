@@ -5,4 +5,4 @@ metadata:
 spec:
   name: k8s-auth-registration-crd
   namespace: k8s
-  version: 0.1.1
+  version: 1.0.0

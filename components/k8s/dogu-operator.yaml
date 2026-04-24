@@ -5,4 +5,9 @@ metadata:
 spec:
   name: k8s-dogu-operator
   namespace: k8s
-  version: 3.2.1
+  version: 3.22.0
+#  valuesYamlOverwrite: |-
+#    controllerManager:
+#      env:
+#        authRegistrationEnabled: true
+#        disablePostfixDependencyCheck: true
