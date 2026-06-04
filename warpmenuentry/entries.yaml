@@ -1,0 +1,71 @@
+apiVersion: k8s.cloudogu.com/v1
+kind: WarpMenuEntry
+metadata:
+  name: entry-test-0
+spec:
+  category: "Detectives"
+  disabled: false
+  displayName:
+    de: "Sherlock - de"
+    en: "Sherlock - en"
+  path: "/sherlock"
+---
+apiVersion: k8s.cloudogu.com/v1
+kind: WarpMenuEntry
+metadata:
+  name: entry-test-1
+spec:
+  category: "Detectives"
+  disabled: false
+  displayName:
+    de: "Sherlock - de"
+    en: "Sherlock - en"
+  path: "/sherlock"
+---
+apiVersion: k8s.cloudogu.com/v1
+kind: WarpMenuEntry
+metadata:
+  name: entry-test-2
+spec:
+  category: "Detectives"
+  disabled: false
+  displayName:
+    de: "Watson - de"
+    en: "Watson - en"
+  path: "/watson"
+---
+apiVersion: k8s.cloudogu.com/v1
+kind: WarpMenuEntry
+metadata:
+  name: entry-test-3
+spec:
+  category: "Detectives"
+  disabled: false
+  displayName:
+    de: "Lestrade - de"
+    en: "Lestrade - en"
+  path: "/lestrade"
+---
+apiVersion: k8s.cloudogu.com/v1
+kind: WarpMenuEntry
+metadata:
+  name: entry-test-4
+spec:
+  category: "Detectives"
+  disabled: true
+  displayName:
+    de: "Mycroft - de"
+    en: "Mycroft - en"
+  path: "/mycroft"
+---
+apiVersion: k8s.cloudogu.com/v1
+kind: WarpMenuEntry
+metadata:
+  name: entry-test-5
+spec:
+  category: "Villain"
+  disabled: false
+  displayName:
+    de: "Moriarty - de"
+    en: "Moriarty - en"
+  path: "/moriarty"
