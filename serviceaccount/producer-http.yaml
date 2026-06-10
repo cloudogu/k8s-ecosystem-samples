@@ -1,34 +1,56 @@
 apiVersion: k8s.cloudogu.com/v1
 kind: ServiceAccountProducer
 metadata:
-  name: nexus-producer
+  name: prometheus
   namespace: ecosystem
 spec:
-  producer: "nexus"
+  producer: "prometheus"
   http:
-    endpoint: "http://nexus.svc.ecosystem.cluster.local/api/cloudogu/service-account"
+    endpoint: "http://k8s-prometheus:8080/serviceaccounts"
     authSecret:
-      name: nexus-credentials
-      key: "api-token"
+      name: k8s-prometheus-service-account-api
+      key: "apiKey"
     priority: 1
-    params:
-      attributes:
-        fullAccessRepository:
-          description: "Name des zu berechtigenden Repositories"
-          type: "string"
-          order: 1
-        permissions:
-          description: "Art der Berechtigungen"
-          type: "string"
-          enum:
-            - "nx-repository-view-*-*-read"
-            - "nx-repository-view-*-*-browse"
-          order: 2
-      required:
-        - fullAccessRepository
-        - permissions
+#    params:
+#      attributes:
+#        fullAccessRepository:
+#          description: "Name des zu berechtigenden Repositories"
+#          type: "string"
+#          order: 1
+#        permissions:
+#          description: "Art der Berechtigungen"
+#          type: "string"
+#          enum:
+#            - "nx-repository-view-*-*-read"
+#            - "nx-repository-view-*-*-browse"
+#          order: 2
+#      required:
+#        - fullAccessRepository
+#        - permissions
     return:
       username:
         description: "Der generierte technische Nutzername"
       password:
         description: "Das Passwort für den Service Account"
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: k8s-prometheus-prometheus-server-allow-service-account-operator
+  namespace: ecosystem
+spec:
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app.kubernetes.io/name: service-account-operator
+    ports:
+    - port: 8087
+      protocol: TCP
+  podSelector:
+    matchLabels:
+      app: k8s-prometheus
+      k8s-prometheus: prometheus-server
+      k8s.cloudogu.com/component.name: k8s-prometheus
+  policyTypes:
+  - Ingress

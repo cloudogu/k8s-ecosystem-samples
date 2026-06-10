@@ -1,23 +1,21 @@
 apiVersion: k8s.cloudogu.com/v1
 kind: ServiceAccountRequest
 metadata:
-  name: grafana-nexus-auth
+  name: grafana-prometheus-auth
   namespace: ecosystem
 spec:
   optional: true
-  consumer: "grafana"
-  consumerType: "Dogu"
-  producer: "nexus-producer"
+  consumer: grafana
+  consumerType: Dogu
+  producer: prometheus
   secretRef:
-    name: "grafana-nexus-credentials"
+    name: grafana-prometheus-credentials
   params:
     options:
-      fullAccessRepository:
-        - "raw-internal"
-      permissions:
-        - "nx-repository-view-*-*-read"
-    args:
-      - "--verbose"
-  rotation:
-    enabled: true
-    rotation: "@weekly"
+      consumer:
+        - "grafana"
+#    args:
+#      - "--verbose"
+#  rotation:
+#    enabled: true
+#    rotation: "@weekly"
