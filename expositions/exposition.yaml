@@ -1,0 +1,40 @@
+apiVersion: k8s.cloudogu.com/v1
+kind: Exposition
+metadata:
+  name: exposition-sample
+spec:
+  http:
+    - name: web
+      service: sample-service
+      port: 8080
+      path: /sample
+      rewrite:
+        stripPrefix: /sample
+    - name: api
+      service: sample-service
+      port: 8081
+      path: /sample-api
+      rewrite:
+        regex:
+          pattern: ^/sample-api/(.*)
+          replacement: /api/$1
+  tcp:
+    - name: sample-ssh
+      service: sample-ssh-service
+      port: 8022
+      requestedExternalPort: 4422
+      protocol: ssh
+    - name: sample-tcp
+      service: sample-tcp-service
+      port: 8082
+      requestedExternalPort: 4482
+  udp:
+    - name: sample-stream
+      service: sample-stream-service
+      port: 8083
+      requestedExternalPort: 4483
+      protocol: stream
+    - name: sample-udp
+      service: sample-udp-service
+      port: 8044
+      requestedExternalPort: 4444
