@@ -50,3 +50,9 @@ Install a specific component from the k8s namespace in its latest version with n
 ```bash
 installComponent.sh k8s-dogu-operator
 ```
+
+### updateVersions
+Get latest version of every component and dogu and updates the version-value within the yaml files
+```bash
+GITHUB_TOKEN=<your_token> make update-versions
+```

@@ -1,0 +1,11 @@
+k8s-dogu-operator-crd=k8s-dogu-lib
+k8s-blueprint-operator-crd=k8s-blueprint-lib
+k8s-debug-mode-operator-crd=k8s-debug-mode-cr-lib
+k8s-backup-operator-crd=k8s-backup-lib
+k8s-support-archive-operator-crd=k8s-support-archive-lib
+k8s-snapshot-controller-crd=k8s-snapshot-controller
+k8s-auth-registration-crd=k8s-auth-registration-lib
+k8s-cert-manager-crd=k8s-cert-manager
+k8s-component-operator-crd=k8s-component-lib
+k8s-exposition-crd=k8s-exposition-lib
+k8s-serviceaccount-crd=k8s-serviceaccount-lib
