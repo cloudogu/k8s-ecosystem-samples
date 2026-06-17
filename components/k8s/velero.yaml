@@ -8,8 +8,8 @@ metadata:
 spec:
   name: k8s-velero
   namespace: k8s
-  version: 5.0.2-9
-  valuesYamlOverwrite: |
+  version: 11.4.0-2
+  valuesYamlOverwrite: |-
     velero:
       credentials:
         existingSecret: velero-bsl

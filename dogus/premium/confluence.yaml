@@ -6,4 +6,4 @@ metadata:
     app: ces
 spec:
   name: premium/confluence
-  version: 8.5.19-1
+  version: 9.2.17-1

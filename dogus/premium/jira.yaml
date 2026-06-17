@@ -6,4 +6,4 @@ metadata:
     app: ces
 spec:
   name: premium/jira
-  version: 9.12.18-1
+  version: 9.12.30-3

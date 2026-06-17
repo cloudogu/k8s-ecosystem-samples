@@ -8,4 +8,4 @@ metadata:
 spec:
   name: k8s-debug-mode-operator
   namespace: k8s
-  version: 1.0.0
+  version: 1.0.3

@@ -5,4 +5,4 @@ metadata:
 spec:
   name: postfix
   namespace: k8s
-  version: 3.10.8-2
+  version: 3.10.8-3

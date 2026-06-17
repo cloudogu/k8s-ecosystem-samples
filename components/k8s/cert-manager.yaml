@@ -5,4 +5,4 @@ metadata:
 spec:
   name: k8s-cert-manager
   namespace: k8s
-  version: 1.13.1-4
+  version: 1.13.1-5

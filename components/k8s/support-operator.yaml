@@ -8,4 +8,4 @@ metadata:
 spec:
   name: k8s-support-archive-operator
   namespace: k8s
-  version: 1.0.1
+  version: 1.1.2

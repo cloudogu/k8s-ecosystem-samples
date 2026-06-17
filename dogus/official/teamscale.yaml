@@ -1,9 +1,9 @@
 apiVersion: k8s.cloudogu.com/v2
 kind: Dogu
 metadata:
-  name: redmine
+  name: teamscale
   labels:
     app: ces
 spec:
-  name: official/redmine
-  version: 6.1.1-8
+  name: itz-bund/teamscale
+  version: 2025.6.13-7

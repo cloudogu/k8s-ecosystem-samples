@@ -6,4 +6,4 @@ metadata:
     app: ces
 spec:
   name: official/plantuml
-  version: 2025.2-1
+  version: 2026.5-1
