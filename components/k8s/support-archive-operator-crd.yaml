@@ -8,4 +8,4 @@ metadata:
 spec:
   name: k8s-support-archive-operator-crd
   namespace: k8s
-  version: 0.1.2
+  version: 1.0.0

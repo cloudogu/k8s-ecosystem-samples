@@ -6,4 +6,4 @@ metadata:
     app: ces
 spec:
   name: openproject/openproject
-  version: 14.6.3-3
+  version: 16.2.1-1

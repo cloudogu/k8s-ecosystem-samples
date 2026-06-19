@@ -5,4 +5,4 @@ metadata:
 spec:
   name: k8s-minio
   namespace: k8s
-  version: 2025.6.13-2
+  version: 2025.6.13-3

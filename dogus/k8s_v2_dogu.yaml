@@ -4,7 +4,7 @@ metadata:
   name: postfix # <DOGU_NAME>
 spec:
   name: official/postfix # <NAMESPACE>/<DOGU_NAME>
-  version: 1.2.3-4 # Dogu-Version
+  version: 3.10.8-3 # Dogu-Version
   supportMode: false # Replace dogu start with infinite sleep for debugging purposes
   resources:
     minDataVolumeSize: 2Gi # Set or resize volume size

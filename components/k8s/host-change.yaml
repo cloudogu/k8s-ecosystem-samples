@@ -5,4 +5,4 @@ metadata:
 spec:
   name: k8s-host-change
   namespace: k8s
-  version: 0.7.0
+  version: 0.8.1
