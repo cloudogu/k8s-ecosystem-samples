@@ -1,4 +1,4 @@
-apiVersion: k8s.cloudogu.com/v1
+apiVersion: k8s.cloudogu.com/v2
 kind: ServiceAccountRequest
 metadata:
   name: grafana-prometheus-auth
@@ -7,15 +7,9 @@ spec:
   optional: true
   consumer: grafana
   consumerType: Dogu
-  producer: prometheus
+  producer: k8s-prometheus
   secretRef:
     name: grafana-prometheus-credentials
-  params:
-    options:
-      consumer:
-        - "grafana"
-#    args:
-#      - "--verbose"
 #  rotation:
 #    enabled: true
 #    rotation: "@weekly"
