@@ -1,2 +1,4 @@
 #!/bin/bash
-./create_dogu_config.sh "ecosystem" "cas"
+envDefault="remote"
+env="${1:-$envDefault}"
+./create_dogu_config.sh "ecosystem" "cas" $env
