@@ -4,6 +4,7 @@ metadata:
   name: admin
   labels:
     app: ces
+    k8s.cloudogu.com/dogu.name: admin
 spec:
   name: premium/admin
   version: 2.18.0-4

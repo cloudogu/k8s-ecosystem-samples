@@ -4,6 +4,7 @@ metadata:
   name: openproject
   labels:
     app: ces
+    k8s.cloudogu.com/dogu.name: openproject
 spec:
   name: openproject/openproject
   version: 16.2.1-1

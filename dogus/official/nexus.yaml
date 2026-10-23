@@ -4,6 +4,7 @@ metadata:
   name: nexus
   labels:
     app: ces
+    k8s.cloudogu.com/dogu.name: nexus
 spec:
   name: official/nexus
   version: 3.86.2-6

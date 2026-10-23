@@ -4,6 +4,7 @@ metadata:
   name: drawio
   labels:
     app: ces
+    k8s.cloudogu.com/dogu.name: drawio
 spec:
   name: hallowelt/drawio
   version: 29.2.9-2

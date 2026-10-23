@@ -4,6 +4,7 @@ metadata:
   name: cockpit
   labels:
     app: ces
+    k8s.cloudogu.com/dogu.name: cockpit
 spec:
   name: official/cockpit
   version: 2.3.0-10

@@ -4,6 +4,7 @@ metadata:
   name: bluespice-opensearch
   labels:
     app: ces
+    k8s.cloudogu.com/dogu.name: bluespice-opensearch
 spec:
   name: hallowelt/bluespice-opensearch
   version: 2.19.4-2

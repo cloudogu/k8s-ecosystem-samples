@@ -4,6 +4,7 @@ metadata:
   name: portainer
   labels:
     app: ces
+    k8s.cloudogu.com/dogu.name: portainer
 spec:
   name: premium/portainer
   version: 2.39.3-1

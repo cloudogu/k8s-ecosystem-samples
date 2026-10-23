@@ -4,6 +4,7 @@ metadata:
   name: teamscale
   labels:
     app: ces
+    k8s.cloudogu.com/dogu.name: teamscale
 spec:
   name: itz-bund/teamscale
   version: 2025.6.13-7

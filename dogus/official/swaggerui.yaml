@@ -4,6 +4,7 @@ metadata:
   name: swaggerui
   labels:
     app: ces
+    k8s.cloudogu.com/dogu.name: swaggerui
 spec:
   name: official/swaggerui
   version: 5.32.6-1

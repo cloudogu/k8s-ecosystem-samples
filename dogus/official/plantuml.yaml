@@ -4,6 +4,7 @@ metadata:
   name: plantuml
   labels:
     app: ces
+    k8s.cloudogu.com/dogu.name: plantuml
 spec:
   name: official/plantuml
   version: 2026.5-1

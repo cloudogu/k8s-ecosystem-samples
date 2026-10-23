@@ -4,6 +4,7 @@ metadata:
   name: scm
   labels:
     app: ces
+    k8s.cloudogu.com/dogu.name: scm
 spec:
   name: official/scm
   version: 3.11.10-1

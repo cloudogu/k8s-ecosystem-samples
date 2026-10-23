@@ -4,6 +4,7 @@ metadata:
   name: ldap-mapper
   labels:
     app: ces
+    k8s.cloudogu.com/dogu.name: ldap-mapper
 spec:
   name: official/ldap-mapper
   version: 1.6.2-9
