@@ -4,6 +4,7 @@ metadata:
   name: gotenberg
   labels:
     app: ces
+    k8s.cloudogu.com/dogu.name: gotenberg
 spec:
   name: official/gotenberg
   version: 8.34.0-1

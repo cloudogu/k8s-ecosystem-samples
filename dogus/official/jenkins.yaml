@@ -4,6 +4,7 @@ metadata:
   name: jenkins
   labels:
     app: ces
+    k8s.cloudogu.com/dogu.name: jenkins
 spec:
   name: official/jenkins
   version: 2.555.1-3

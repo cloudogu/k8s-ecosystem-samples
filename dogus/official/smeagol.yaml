@@ -4,6 +4,7 @@ metadata:
   name: smeagol
   labels:
     app: ces
+    k8s.cloudogu.com/dogu.name: smeagol
 spec:
   name: official/smeagol
   version: 1.7.8-6

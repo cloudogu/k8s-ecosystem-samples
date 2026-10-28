@@ -4,6 +4,7 @@ metadata:
   name: usermgt
   labels:
     app: ces
+    k8s.cloudogu.com/dogu.name: usermgt
 spec:
   name: official/usermgt
   version: 1.21.0-4

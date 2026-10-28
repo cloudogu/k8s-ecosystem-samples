@@ -4,6 +4,7 @@ metadata:
   name: bluespice-collabpadsbackend
   labels:
     app: ces
+    k8s.cloudogu.com/dogu.name: bluespice-collabpadsbackend
 spec:
   name: hallowelt/bluespice-collabpadsbackend
   version: 5.1.5-2

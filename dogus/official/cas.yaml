@@ -4,6 +4,7 @@ metadata:
   name: cas
   labels:
     app: ces
+    k8s.cloudogu.com/dogu.name: cas
 spec:
   name: official/cas
   version: 7.2.7-19

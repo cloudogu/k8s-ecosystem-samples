@@ -4,6 +4,7 @@ metadata:
   name: confluence
   labels:
     app: ces
+    k8s.cloudogu.com/dogu.name: confluence
 spec:
   name: premium/confluence
   version: 9.2.17-1

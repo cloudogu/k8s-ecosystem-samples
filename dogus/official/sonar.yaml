@@ -4,6 +4,7 @@ metadata:
   name: sonar
   labels:
     app: ces
+    k8s.cloudogu.com/dogu.name: sonar
 spec:
   name: official/sonar
   version: 25.12.0-10

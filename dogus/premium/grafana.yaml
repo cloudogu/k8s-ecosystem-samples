@@ -4,6 +4,7 @@ metadata:
   name: grafana
   labels:
     app: ces
+    k8s.cloudogu.com/dogu.name: grafana
 spec:
   name: premium/grafana
   version: 11.6.13-5

@@ -4,6 +4,7 @@ metadata:
   name: postfix
   labels:
     app: ces
+    k8s.cloudogu.com/dogu.name: postfix
 spec:
   name: official/postfix
   version: 3.10.8-3

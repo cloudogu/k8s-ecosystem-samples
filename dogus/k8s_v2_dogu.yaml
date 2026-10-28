@@ -2,6 +2,8 @@ apiVersion: k8s.cloudogu.com/v2
 kind: Dogu
 metadata:
   name: postfix # <DOGU_NAME>
+  labels:
+    k8s.cloudogu.com/dogu.name: postfix
 spec:
   name: official/postfix # <NAMESPACE>/<DOGU_NAME>
   version: 3.10.8-3 # Dogu-Version

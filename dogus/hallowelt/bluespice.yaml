@@ -4,6 +4,7 @@ metadata:
   name: bluespice
   labels:
     app: ces
+    k8s.cloudogu.com/dogu.name: bluespice
 spec:
   name: hallowelt/bluespice
   version: 5.1.5-3
